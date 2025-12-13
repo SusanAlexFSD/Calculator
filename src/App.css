@@ -1,0 +1,157 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+/* In App.css */
+h2 {
+  font-size: 3rem;  /* Change the font size to whatever you prefer */
+  color: #ff9500;   /* You can also change the color if you want */
+  text-align: center; /* This will center-align the text */
+  margin-bottom: 20px; /* Optional, adds some space below the h2 */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.calculator {
+  width: 320px;
+  height: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(20, 20, 20, 0.9);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calculation-display {
+  font-size: 1.5em; /* Smaller than input */
+  color: #fff;
+  margin-bottom: 20px; /* Space between input and calculation */
+  text-align: right;
+  opacity: 0.7; /* Subtle effect */
+}
+
+.display {
+  width: 95%;
+  height: 180px;
+  background: rgba(116, 115, 115, 0.9);
+  font-size: 1.0em;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-right: 20px;
+  padding-top: 20px;
+  border-radius: 15px;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Styling for input (current typed expression) */
+.input {
+  font-size: 2.2em;
+  text-align: right;
+  opacity: 0.9;
+  margin-bottom: 10px; /* Space between input and calculation */
+}
+
+/* Styling for calculation (real-time result) */
+.calculation {
+  font-size: 1.5em;
+  text-align: right;
+  color: #ff9500; /* Calculation text color */
+  opacity: 0.7;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 10px;
+}
+
+/* General button styling */
+button {
+  padding: 20px;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: inset 0 8px 16px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased inset shadow to give a more "dipped" effect */
+  background: linear-gradient(145deg, #4b4b4b, #222222); /* Dark gradient background for depth */
+}
+
+/* Dark gray number buttons */
+button:not(.symbol, .special) {
+  background-color: #333;
+  color: white;
+}
+
+/* Orange operator buttons (+, -, *, /, =) */
+.symbol {
+  background-color: #ff9500;
+  color: white;
+  box-shadow: inset 0 8px 16px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger inset shadow for operator buttons */
+  background: linear-gradient(145deg, #ff7b00, #ff9500); /* Gradient for the orange buttons */
+}
+
+
+/* Light gray special buttons (C, +/-, %) */
+.special {
+  background-color: #a5a5a5;
+  color: black;
+  box-shadow: inset 0 8px 16px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger inset shadow for special buttons */
+  background: linear-gradient(145deg, #c2c2c2, #a5a5a5); /* Gradient for light gray buttons */
+}
+
+/* Ensure '0' spans 2 columns */
+.zero {
+  grid-column: span 2;
+}
+
+/* Hover effect */
+button:hover {
+  filter: brightness(1.2);
+  box-shadow: inset 0 8px 16px rgba(0, 0, 0, 0.5), 0 6px 10px rgba(0, 0, 0, 0.2); /* Darker inset shadow on hover */
+}
+
+/* Button press effect */
+button:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 6px 10px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3); /* Deeper inset shadow when pressed */
+}
+
